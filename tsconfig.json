@@ -11,6 +11,7 @@
 		"moduleResolution": "bundler",
 		"resolveJsonModule": true,
 		"isolatedModules": true,
+		"noImplicitAny": false,
 		"jsx": "preserve",
 		"incremental": true,
 		"plugins": [
@@ -24,6 +25,12 @@
 			"utilities": ["./src/shared/utilities/index.ts"]
 		}
 	},
-	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+	"include": [
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx",
+		".next/types/**/*.ts",
+		"src/content/docs/components/file-tree.mdx"
+	],
 	"exclude": ["node_modules"]
 }
