@@ -4,7 +4,7 @@
  * @returns The absolute url for the given path
  */
 
-import { siteConfig } from "../../core/config/site"
+import { siteConfig } from '../../core/config/site'
 
 export function absoluteUrl(path: string) {
 	if (process.env.VERCEL) {
