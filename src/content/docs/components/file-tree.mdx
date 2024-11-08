@@ -1,0 +1,114 @@
+---
+title: FileTree Component
+description: A customizable and interactive file tree component for displaying hierarchical structures
+---
+
+# FileTree Component
+
+The FileTree component is a versatile and interactive way to display hierarchical file and folder structures in your application.
+
+## Basic Usage
+
+Here's a basic example of how to use the FileTree component:
+
+<ComponentPlayground
+  component="file-tree"
+  code={\`
+import React from 'react'
+import { FileTree, TreeItem } from '@/components/ui/file-tree'
+
+const exampleStructure: TreeItem[] = [
+{
+name: 'src',
+children: [
+{ name: 'components', children: [{ name: 'Button', extension: 'tsx' }] },
+{ name: 'styles', children: [{ name: 'global', extension: 'css' }] },
+{ name: 'utils', children: [{ name: 'helpers', extension: 'ts' }] },
+],
+defaultOpen: true,
+},
+{ name: 'package', extension: 'json' },
+{ name: 'tsconfig', extension: 'json' },
+{ name: 'README', extension: 'md' },
+]
+
+export default function FileTreeExample() {
+  return (
+    <div className="w-full max-w-sm rounded-lg border p-4 shadow-sm">
+      <h2 className="mb-4 text-lg font-semibold">Project Structure</h2>
+      <FileTree items={exampleStructure} />
+    </div>
+  )
+}
+\`}
+/>
+
+## Features
+
+-   Hierarchical display of files and folders
+-   Customizable icons for different file types
+-   Expandable/collapsible folders
+-   Support for infinite nesting
+-   Keyboard navigation support
+
+## API Reference
+
+The FileTree component accepts the following props:
+
+| Prop  | Type       | Default | Description                            |
+| ----- | ---------- | ------- | -------------------------------------- |
+| items | TreeItem[] | []      | An array of TreeItem objects to render |
+
+### TreeItem Type
+
+The `TreeItem` type is used to define the structure of each item in the file tree:
+
+```typescript
+type TreeItem = FileItem | FolderItem
+
+interface FileItem {
+	name: string
+	extension: string
+}
+
+interface FolderItem {
+	name: string
+	children?: TreeItem[]
+	defaultOpen?: boolean
+}
+```
+
+## Customization
+
+You can customize the appearance of the FileTree component by modifying the CSS classes used in the component. The component uses Tailwind CSS classes for styling.
+
+## Accessibility
+
+The FileTree component is built with accessibility in mind:
+
+-   It uses semantic HTML elements for better structure
+-   It supports keyboard navigation
+-   It includes appropriate ARIA attributes for screen readers
+
+## Examples
+
+### Deeply Nested Structure
+
+Here's an example of a more complex, deeply nested file structure:
+
+## Best Practices
+
+1. Keep your file structure clean and organized
+2. Use meaningful names for files and folders
+3. Limit the depth of nesting to maintain readability
+4. Consider using the `defaultOpen` prop for important top-level folders
+
+## Troubleshooting
+
+If you encounter any issues with the FileTree component, ensure that:
+
+1. You're passing a valid `TreeItem[]` to the `items` prop
+2. All required dependencies are installed
+3. The component is properly imported in your file
+
+If problems persist, check the browser console for any error messages and refer to the component's source code for more details.

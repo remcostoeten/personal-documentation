@@ -1,0 +1,88 @@
+---
+title: Button Component
+description: A customizable button component
+---
+
+# Button Component
+
+The Button component is a versatile and customizable button that can be used throughout your application.
+
+## Usage
+
+<ComponentPlayground
+  component="button"
+  code={`
+import React from 'react'
+import { Button } from '@/components/ui/button'
+
+export default function ButtonExample() {
+  return (
+    <Button variant="primary" size="medium">
+      Click me
+    </Button>
+  )
+}
+  `}
+/>
+
+## Props
+
+| Prop     | Type                                | Default   | Description                    |
+| -------- | ----------------------------------- | --------- | ------------------------------ |
+| variant  | 'primary' \| 'secondary' \| 'ghost' | 'primary' | The visual style of the button |
+| size     | 'small' \| 'medium' \| 'large'      | 'medium'  | The size of the button         |
+| disabled | boolean                             | false     | Whether the button is disabled |
+
+## Examples
+
+### Primary Button
+
+<ComponentPlayground
+  component="button"
+  code={`
+import React from 'react'
+import { Button } from '@/components/ui/button'
+
+export default function PrimaryButtonExample() {
+  return (
+    <Button variant="primary">Primary Button</Button>
+  )
+}
+  `}
+/>
+
+### Secondary Button
+
+<ComponentPlayground
+  component="button"
+  code={`
+import React from 'react'
+import { Button } from '@/components/ui/button'
+
+export default function SecondaryButtonExample() {
+  return (
+    <Button variant="secondary">Secondary Button</Button>
+  )
+}
+  `}
+/>
+
+### Ghost Button
+
+<ComponentPlayground
+  component="button"
+  code={`
+import React from 'react'
+import { Button } from '@/components/ui/button'
+
+export default function GhostButtonExample() {
+  return (
+    <Button variant="ghost">Ghost Button</Button>
+  )
+}
+  `}
+/>
+
+## Customization
+
+You can customize the Button component by modifying the `button.tsx` file in the `src/components/ui` directory.
